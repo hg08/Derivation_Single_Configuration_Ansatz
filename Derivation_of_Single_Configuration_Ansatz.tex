@@ -1,0 +1,108 @@
+\documentclass[0necolumn,pra,aps,11pt]{revtex4}
+\usepackage{pifont}
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+%\usepackage{amsfonts,amsmath}
+\usepackage{epsfig}
+\newcommand{\citeu}[1]{$^{\mbox{\protect \scriptsize\cite{#1}}}$}
+\begin{document}
+\title{A derivation of coupled equations from single-configuration ansatz}
+\author{Mainz Simulation$^{\dag}$\footnotetext{$\dag$ E-mail:
+gang@uni-mainz.de}
+\\{\small \it Institute for Physics, Johannes Gutenberg University, Mainz, 55128, Germany}}
+%\date{\today}
+\date{August 18, 2013}
+\begin{abstract}
+We derive the set of coupled equations from from single-configuration ansatz by Frankel's variational principle.
+
+\hspace{-5mm}\textbf{Key words}: \small{TDSCF}
+\\
+\end{abstract}
+\affiliation{  }
+\maketitle
+The starting point is the non-relativistic quantum mechanics
+\begin{eqnarray}
+i\hbar \frac{\partial}{\partial t}\Phi(r_i\},\{R_i\} t)= H \Phi(\{r_i\},\{R_i\} t),
+\label{1}
+\end{eqnarray}
+in position representation in conjunction with the standard Hamiltonian
+\begin{eqnarray}
+H = -\sum_{I}\frac{\hbar^{2}}{2M_{I}}\nabla_{I}^2 -\sum_{i}\frac{\hbar^{2}}{2m_{e}}\nabla_{i}^2 + V_{n-e} (\{r_i\},\{R_i\}; t) \nonumber
+  =-\sum_{I}\frac{\hbar^{2}}{2M_{I}}\nabla_{I}^2+ H_e(\{r_i\},\{R_i\}; t).
+\label{2}
+\end{eqnarray}
+
+\section{Equation of $a$}
+The simplest product ansatz is
+\begin{eqnarray}
+\Phi(\{r_i\},\{R_i\}; t)\approx \psi(\{r_i\},; t) \chi(\{R_i\}; t) {exp{[\frac{i}{\hbar}\int_{t_0}^t dt'E_e(t')}]}.
+\label{3}
+\end{eqnarray}
+
+Set $exp{[\frac{i}{\hbar}\int_{t_0}^t dt'E_e(t')]}= a(t)$, now we derive the equation of $a$,
+from left multiplying $\langle \psi\chi|$, $\langle a\psi|$ and $\langle a \chi|$  and integration (Frankel's variational principle \cite{MHB,JZ}
+\begin{eqnarray}
+\langle \delta\Phi|i \frac{\partial}{\partial t} - H|\Phi\rangle =0 \nonumber.
+\label{4}
+\end{eqnarray}
+For convenience, we use Dirac symbols.)
+In the following expressions, "$'$" denotes the derivative of time.
+Inserting (~\ref{3}) into (~\ref{1}) and left multiplying $\langle \psi\chi|$ and integrating (variation with respect to $a$),we obtain
+\begin{eqnarray}
+\langle \psi\chi|i a'\psi\chi +ia \psi'\chi + ia\psi\chi'- Ha\psi\chi \rangle =0 \nonumber,
+\label{5}
+\end{eqnarray}
+i.e.,
+\begin{eqnarray}
+ia'= {\langle\psi\chi |H|\psi\chi\rangle}a -ia\langle\psi|\psi'\rangle - ia\langle\chi|\chi'\rangle \nonumber.
+\label{6}
+\end{eqnarray}
+Impose energy conservation $ \langle\psi\chi |H|\psi\chi\rangle \equiv \langle H \rangle = E_C$,
+\begin{eqnarray}
+ia'=E_{C}a - ia\langle\psi|\psi'\rangle - ia\langle\chi|\chi'\rangle.
+\label{6a}
+\end{eqnarray}
+
+\section{coupled equations}
+Multiplying from the left by $\langle a\psi|$  to (~\ref{1}) and integrating (variation with respect to $\chi$), we have
+\begin{eqnarray}
+\langle a\psi|i \frac{\partial}{\partial t} - H|a\psi\chi \rangle=\langle a\psi|ia'\psi\chi +ia \psi'\chi + ia\psi\chi'- Ha\psi\chi \rangle =0 \nonumber.
+\label{7}
+\end{eqnarray}
+Because $ia'=E_{C}a - ia\langle\psi|\psi'\rangle - ia\langle\chi|\chi'\rangle$,
+\begin{eqnarray}
+i|\chi'\rangle = -\sum_{I}\frac{\hbar^{2}}{2M_{I}}\nabla_{I}^2|\chi \rangle + \langle \psi|H_e|\psi \rangle |\chi\rangle + ( i\langle\chi|\chi'\rangle -E_{C})|\chi\rangle,
+\label{9}
+\end{eqnarray}
+Similarly, multiplying from the left by $\langle a\chi|$ to (~\ref{1}) and integrating (variation with respect to $\psi$), we get
+\begin{eqnarray}
+\langle a\chi|i \frac{\partial}{\partial t} - H|a\psi\chi \rangle=\langle a\chi|ia'\psi\chi +ia \psi'\chi + ia\psi\chi'- Ha\psi\chi \rangle =0 \nonumber.
+\label{10}
+\end{eqnarray}
+Considering (~\ref{6a}), we obtain
+\begin{eqnarray}
+\langle H\rangle |\psi \rangle -i\langle\psi|\psi'\rangle |\psi\rangle + i|\psi'\rangle - [-\sum_{i}\frac{\hbar^{2}}{2m_{e}}\nabla_{i}^2 |\psi \rangle
++ \langle \chi |V_{n-e}|\chi\rangle |\psi \rangle]=0 \nonumber ,
+\label{11}
+\end{eqnarray}
+therefore
+\begin{eqnarray}
+i|\psi'\rangle = -\sum_{i}\frac{\hbar^{2}}{2m_{e}}\nabla_{i}^2 |\psi \rangle
++ \langle \chi |V_{n-e}|\chi\rangle |\psi \rangle + (i\langle\psi|\psi'\rangle -E_{C})|\psi\rangle .
+\label{11}
+\end{eqnarray}
+
+Since wavefunction (~\ref{3}) is not unique\cite{MHB,JZ}, we can choose values of $\langle\psi|\psi'\rangle $ and $\langle\chi|\chi'\rangle$ to uniquely define it. To simplify the coupled equation, we set $i\langle\psi|\psi'\rangle = i\langle\chi|\chi'\rangle = E_{C}$.
+
+\begin{thebibliography}{0}
+
+\bibitem{MHB} M.H. Beck et al. Physics Reports 324 (2000) 1,105
+\bibitem{JZ}J. Zanghellini, M. Kitzler, C. Fabian, T. Brabec, and A. Scrinzi, Laser Physics,13,8,(2003),1064¨C1068
+\end{thebibliography}
+
+\end {document} 
